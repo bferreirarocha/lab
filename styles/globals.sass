@@ -1,0 +1,456 @@
+/* VARIABLES */
+$large: 1024px
+$medium: 768px
+
+:root
+  --primary: #ff9900
+  --secondary: #000
+html, body, #_next
+  min-height: 100vh
+  position: relative
+body
+  background-image: url('/assets/bg.png')
+  background-size: cover
+  font-family: 'Montserrat', sans-serif
+  color: #000
+  font-weight: 500
+  background-repeat: no-repeat
+  background-position: center center
+  background-attachment: fixed
+  min-height: 100vh
+a
+  text-decoration: none
+  color: var(--primary)
+  &:hover
+    color: #bf7200
+a, button
+  transition: all .3s ease-in-out
+.text-primary
+  color: var(--primary)!important
+.mw-70
+  max-width: 70% !important
+header
+  height: 85px
+  background-color: #fff
+  display: flex
+  align-items: center
+  @media (max-width: $large)
+    height: unset
+    padding: 15px 0
+  .logo-header
+    height: 50px
+  .nav-menu
+    display: flex
+    align-items: center
+    ul
+      list-style: none
+      margin: 0
+      display: flex
+      align-items: center
+      padding-left: 0
+      li
+        display: inline-block
+        margin-left: 50px
+        font-weight: 600
+        @media (max-width: $large)
+          margin-left: 0px
+        .cUyArF
+          height: unset
+          width: unset
+          padding: 3px 15px
+          .sc-hsWlPz.bOGNab
+            text-transform: uppercase
+            font-weight: 600
+main
+  padding: 45px 0 150px
+  @media (max-width: $large)
+    padding: 25px 0 280px
+.card
+  padding: 50px
+  border-radius: 20px
+  @media (max-width: $large)
+    padding: 20px
+  .card-title
+    h1
+      font-size: 25px
+      font-weight: 600
+      text-align: center
+      max-width: 60%
+      line-height: 40px
+      margin: auto
+      @media (max-width: $large)
+        max-width: 90%
+        font-size: 18px
+        line-height: 28px
+#steps
+  margin-top: 70px
+  .line
+    height: 10px
+    background-color: #ececec
+    margin-bottom: -35px
+    border-radius: 25px
+    position: relative
+    @media (max-width: $large)
+      height: 8px
+      margin-bottom: -25px
+    &::after
+      content: ''
+      background-color: var(--primary)
+      height: 10px
+      position: absolute
+      left: 0
+      top: 0
+      z-index: 1
+      border-radius: 25px
+  .line-1::after
+    width: 0%
+  .line-2::after
+    width: 50%
+  .line-3::after
+    width: 100%
+  .step-row
+    display: grid
+    grid-template-columns: auto auto auto
+    place-content: space-between
+    &.step-4
+      grid-template-columns: auto auto auto auto
+    .step
+      display: grid
+      z-index: 2
+      &.active
+        .step-circle
+          background-color: var(--primary)
+      .step-circle
+        border-radius: 50%
+        height: 60px
+        width: 60px
+        display: grid
+        place-items: center
+        background-color: #ececec
+        font-weight: 600
+        font-size: 23px
+        color: #fff
+        justify-self: center
+        @media (max-width: $large)
+          height: 40px
+          width: 40px
+      p
+        margin-top: 12px
+        @media (max-width: $large)
+          font-size: 14px
+.form-control
+  background-color: #ececec
+  height: 55px
+  border-radius: 30px
+  padding: 25px
+  &:focus, &:active
+    box-shadow: 0 0 0 .25rem rgba(255, 153, 1, 0.5)
+    background-color: #ececec
+.btn-remove, .btn-add-in
+  background-color: #a2a2a2
+  position: absolute
+  right: 0
+  padding: 14px 35px
+  border-radius: 30px
+  top: 0
+  height: 100%
+  color: #fff
+  &:hover
+    background-color: #494949
+    color: #fff
+  &.circle
+    boder-radius: 50px
+    width: 10px
+    height: 10px
+    padding: 15px
+    background-color: #ff0a0a
+    position: relative
+  &.sn
+    @media (max-width: 1024px)
+      position: relative
+      width: 100%
+      margin-top: 15px
+.btn
+  padding: 14px 37px
+  border: 0
+  border-radius: 30px
+  color: #fff
+  font-weight: 600
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  &.btn-primary, &.btn-add, &.btn-primary:focus
+    background-color: var(--primary)
+    &:active, &:hover
+      color: #fff
+      background-color: #bf7200
+  &.btn-secondary
+    background-color: #fff
+    border: 3px solid var(--primary)
+    color: var(--primary)
+    &:active, &:focus, &:hover
+      background-color: #eeeeee
+  &.btn-success
+    background-color: #31bf3b
+.item-card
+  background-color: #ececec
+  padding: 25px
+  color: #000
+  border-radius: 30px
+  p
+    margin-bottom: 0
+.item-info
+  p:first-child
+    font-weight: 700
+.disclaimer
+  font-size: 13px
+.modal-overlay
+  width: 100%
+  height: 100%
+  position: fixed
+  top: 0
+  left: 0
+  background-color: black
+  opacity: 0
+  transition: all .3s ease-in-out
+  z-index: 3
+  display: flex
+  align-items: center
+  justify-content: center
+  &.active
+    opacity: 0.9
+.modal-main
+  display: grid
+  place-items: center
+  position: fixed
+  width: 100%
+  height: 100vh
+  z-index: 4
+  top: 0
+  left: 0
+  .modal-content
+    color: #000
+    border-radius: 20px
+    .modal-footer
+      .btn
+        @media (max-width: $large)
+          width: 100%
+.lds-ripple
+  display: inline-block
+  position: relative
+  width: 80px
+  height: 80px
+  transform: scale(1.3)
+  div
+    position: absolute
+    border: 4px solid #fff
+    opacity: 1
+    border-radius: 50%
+    animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite
+    &:nth-child(2)
+      animation-delay: -0.5s
+      &.dark div
+        border: 4px solid #000
+@keyframes lds-ripple
+  0%
+    top: 36px
+    left: 36px
+    width: 0
+    height: 0
+    opacity: 0
+  4.9% 
+    top: 36px
+    left: 36px
+    width: 0
+    height: 0
+    opacity: 0
+  5%
+    top: 36px
+    left: 36px
+    width: 0
+    height: 0
+    opacity: 1
+  100%
+    top: 0px
+    left: 0px
+    width: 72px
+    height: 72px
+    opacity: 0
+.swal2-styled.swal2-confirm
+  background-color: var(--primary)!important
+  &:focus
+    box-shadow: 0 0 0 3px #e09b6680!important
+.subtotal
+  padding: 0 15px
+label.checkbox-container
+  display: block
+  position: relative
+  padding-left: 35px
+  margin-bottom: 12px
+  cursor: pointer
+  font-size: 16px
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+  input
+    position: absolute
+    opacity: 0
+    cursor: pointer
+    height: 0
+    width: 0
+    &:checked
+      & ~ .checkmark
+        background-color: #2196F3
+        &:after
+          display: block
+  &:hover
+    input
+      & ~ .checkmark
+        background-color: #ccc
+.checkmark
+  &:after
+    left: 10px
+    top: 7px
+    width: 5px
+    height: 10px
+    border: solid white
+    border-width: 0 3px 3px 0
+    -webkit-transform: rotate(45deg)
+    -ms-transform: rotate(45deg)
+    transform: rotate(45deg)
+.checkmark
+  position: absolute
+  top: 50%
+  left: 0
+  transform: translateY(-50%)
+  height: 25px
+  width: 25px
+  background-color: #eee
+  &:after
+    content: ""
+    position: absolute
+    display: none
+.modal-dialog
+  max-width: 700px
+  #steps .step-row .step p
+    padding: 0 0.8rem
+textarea.form-control
+  min-height: 200px
+.order-details:not(:last-child)
+  border-bottom: 1px solid #000
+  &:not(:last-child)
+    padding-bottom: 35px
+    margin-bottom: 50px
+
+.ButtonPrimary
+  background-color: var(--primary)!important
+  background: var(--primary)!important
+.btn-next
+  transform: scaleX(-1)
+  + strong
+    display: inline-block
+    margin-top: 1px
+.MuiTypography-root.MuiTypography-body1.MuiFormControlLabel-label.css-ahj2mt-MuiTypography-root
+  font-family: 'Montserrat', sans-serif!important
+.order-price
+  font-weight: 600
+.menu-resp
+  position: fixed
+  display: flex
+  justify-content: center
+  align-items: center
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  background-color: rgba(255, 255, 255, 0.95)
+  transform: translateX(100%)
+  -webkit-transform: translateX(100%)
+  -moz-transform: translateX(100%)
+  opacity: 0
+  visibility: hidden
+  transition: all 0.4s ease-in-out
+  -webkit-transition: all 0.4s ease-in-out
+  -moz-transition: all 0.4s ease-in-out
+  -o-transition: all 0.4s ease-in-out
+  height: 100vh
+  width: 100vw
+  z-index: 999
+  &.active
+    opacity: 1
+    visibility: visible
+    transform: translateX(0%)
+    -webkit-transform: translateX(0%)
+    -moz-transform: translateX(0%)
+    transition: all 0.4s ease-in-out
+    -webkit-transition: all 0.4s ease-in-out
+    -moz-transition: all 0.4s ease-in-out
+    -o-transition: all 0.4s ease-in-out
+  nav ul li
+    display: flex
+    text-aling: left
+    justify-content: center
+    font-size: 24px
+    &:not(:last-child)
+      margin-bottom: 60px
+    a
+      color: #000
+.btn-close-menu
+  background-image: url(../public/assets/close.svg)
+  position: absolute
+  top: 30px
+  right: 30px 
+  z-index: 9999
+  width: 20px
+  height: 20px
+  cursor: pointer
+  background-repeat: no-repeat
+footer
+  background-color: #fff
+  padding: 30px 0
+  position: absolute
+  bottom: 0
+  width: 100%
+  .logo-footer
+    height: 50px
+  .smartshopper-social
+    li
+      &:not(:last-child)
+        margin-right: 30px
+      i
+        font-size: 35px
+
+.btn-subscription
+  background-color: #ff7f50
+  background-image: linear-gradient(-45deg, #ff7f50, #ffa500, #ff7f50, #ffa500)
+  background-size: 400% 400%
+  animation: animateGradient 2s ease infinite
+  &:active
+    background-color: #ff6347
+  &:disabled
+    opacity: 0.5
+    cursor: not-allowed
+@keyframes animateGradient
+  0%
+    background-position: 0% 50%
+  50%
+    background-position: 100% 50%
+  100%
+    background-position: 0% 50%
+.card.card-secondary
+  cursor: pointer
+  &.active
+    outline: 5px solid var(--primary)
+.circle
+  width: 50px
+  height: 50px
+  border: 3px solid var(--primary)
+  border-radius: 50%
+  font-weight: 600
+  font-size: 20px
+  display: flex
+  color: var(--primary)
+  align-items: center
+  justify-content: center
+  margin-bottom: 20px
