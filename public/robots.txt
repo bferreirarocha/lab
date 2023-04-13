@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://app.smartshopperpay.com/
+
+# Sitemaps
+Sitemap: https://app.smartshopperpay.com/sitemap.xml
